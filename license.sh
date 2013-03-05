@@ -98,14 +98,14 @@ case ${EXTENSION} in
 	sed -i '1i\/*' ${FILE}
 	;;
 	py)
-	sed -i '/^#!/a """' ${FILE}
-	sed -i "/^#!/a ${LICENSE}" ${FILE}
-	sed -i '/^#!/a """' ${FILE}
-	sed -i '/^#!/G' ${FILE}
+	sed -i '0,/^#!/a """' ${FILE}
+	sed -i "0,/^#!/a ${LICENSE}" ${FILE}
+	sed -i '0,/^#!/a """' ${FILE}
+	sed -i '0,/^#!/G' ${FILE}
 	;;
 	pl|sh)
 	INSERT=$(echo ${LICENSE} | sed -e 's/^/# /' -e 's/\\n/\\n# /g')
-	sed -i "/^#!/a ${INSERT}" ${FILE}
-	sed -i '/^#!/G' ${FILE}
+	sed -i "0,/^#!/a ${INSERT}" ${FILE}
+	sed -i '0,/^#!/G' ${FILE}
 	;;
 esac
