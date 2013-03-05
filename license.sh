@@ -16,6 +16,7 @@
 
 if [ $# -lt 1 ]; then
 	echo "Usage: $0 FILENAME [LICENSE_TYPE]"
+	echo "License types include: apache personal"
 	exit
 fi
 
