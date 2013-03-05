@@ -9,6 +9,9 @@ FILE=$1
 LICENSE=$2
 NAME=$(finger $(whoami) | gawk 'match($0, /Name: (.*$)/, out) { print out[1] }')
 YEAR=$(date +%Y)
+
+# You should define your email in your .bashrc file
+# export EMAIL=foo@bar.com
 if [ ${EMAIL} ]; then
 	EMAIL_INSERT="<${EMAIL}>"
 fi
