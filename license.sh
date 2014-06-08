@@ -16,7 +16,7 @@
 
 if [ $# -lt 1 ]; then
 	echo "Usage: $0 FILENAME [LICENSE_TYPE]"
-	echo "License types include: apache personal gpl lgpl"
+	echo "License types include: apache gpl lgpl personal"
 	exit
 fi
 
